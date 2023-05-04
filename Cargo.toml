@@ -1,0 +1,18 @@
+[package]
+name = "esp-camera-rs"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+esp-idf-hal = "0.40.1"
+esp-idf-sys = "0.32.1"
+
+[patch.crates-io]
+esp-idf-sys = {git = "https://github.com/esp-rs/esp-idf-sys", branch = "master"}
+
+[[package.metadata.esp-idf-sys.extra_components]]
+component_dirs = "esp32-camera"
+bindings_header = "bindings.h"
+bindings_module = "camera"
